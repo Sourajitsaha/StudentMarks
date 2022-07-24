@@ -1,0 +1,83 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Student{
+   protected int Physics,Chemistry,Maths;
+   protected String Name;
+   protected int Roll;
+   Student(){
+      this.Physics=0;
+      this.Chemistry=0;
+      this.Maths=0;
+      this.Name=null;
+      this.Roll=0;
+   }
+   Student(int Roll,String Name,int Physics,int Chemistry,int Maths){
+      this.Roll=Roll;
+      this.Name=Name;
+      this.Physics=Physics;
+      this.Chemistry=Chemistry;
+      this.Maths=Maths;
+   }
+   public int getPhysics(){
+      return Physics;
+   }
+   public int getChemistry(){
+      return Chemistry;
+   }
+   public int getMaths(){
+      return Maths;
+   }
+   public String getName(){
+      return Name;
+   }
+   public int getRoll(){
+      return Roll;
+   }
+   public int total(){
+      int total=Physics+Chemistry+Maths;
+      return total;
+   }
+   public double Result(){
+      double percentage=(Physics+Chemistry+Maths)/3;
+      return percentage;
+   }
+}
+class UpdatedStudent extends Student{
+    UpdatedStudent(int Roll,String Name,int Physics,int Chemistry,int Maths){
+      this.Roll=Roll;
+      this.Name=Name;
+      this.Physics=Physics;
+      this.Chemistry=Chemistry;
+      this.Maths=Maths;
+   }
+   public double Result(){
+      double Result=(double)(Physics+Chemistry+Maths)/30;
+      return Result;
+   }
+}
+class Codechef
+{
+	public static void main (String[] args) 
+	{
+		Student sc[]=new Student[3];
+		sc[0]=new Student(45,"Forest Lahiri",86,95,56);
+		sc[1]=new Student(34,"Susmit Basu",98,50,100);
+		sc[2]=new Student(25,"Sourajit Saha",29,100,100);
+		for (int i=0;i<3;i++){
+		   System.out.println("Total= "+sc[i].total());
+		   System.out.println("Percentage= "+sc[i].Result());
+		} 
+			Student bv[]=new UpdatedStudent[3];
+		bv[0]=new UpdatedStudent(45,"Forest Lahiri",86,95,56);
+		bv[1]=new UpdatedStudent(34,"Susmit Basu",98,50,100);
+		bv[2]=new UpdatedStudent(25,"Sourajit Saha",29,100,100);
+		for (int i=0;i<3;i++){
+		   System.out.println("Total= "+bv[i].total());
+		   System.out.println("CGPA= "+bv[i].Result());
+		} 
+	}
+}
